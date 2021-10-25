@@ -10,6 +10,9 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 
+// Static Files
+app.use(express.static('public'))
+app.use('/img', express.static(__dirname + 'public/images'))
 
 app.post('/update', async (req, res) => {
     const id = req.body.txtId

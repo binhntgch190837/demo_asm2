@@ -6,12 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/css.css">
     <title>Bin_Shop</title>
+    {{!-- //css --}}
+    <style>@-webkit-keyframes my {
+    0% { color: #F8CD0A; }
+    50% { color: #fff; }
+    100% { color: #F8CD0A; }
+    }
+    @-moz-keyframes my {
+    0% { color: #F8CD0A; }
+    50% { color: #fff; }
+    100% { color: #F8CD0A; }
+    }
+    @-o-keyframes my {
+    0% { color: #F8CD0A; }
+    50% { color: #fff; }
+    100% { color: #F8CD0A; }
+    }
+    @keyframes my {
+    0% { color: #F8CD0A; }
+    50% { color: #fff; }
+    100% { color: #F8CD0A; }
+    }
+    .test {
+    background:#3d3d3d;
+    font-size:24px;
+    font-weight:bold;
+    -webkit-animation: my 700ms infinite;
+    -moz-animation: my 700ms infinite;
+    -o-animation: my 700ms infinite;
+    animation: my 700ms infinite;
+    text-align: center;
+    }
+
+    </style>
 </head>
 
 <body>
-    <h1>Bin_Shop</h1>
+    <header>
+    <h1 class="test">Bin_Shop</h1>
     <script>alert('Welcome to my page!!')</script>
+    <img src="img/main.jpg" alt="Cat">
+    </header>
+    <main>
     <div style="width: 50%;">
         <form action="/insert" method="post">
             <div class="mb-3">
@@ -91,7 +129,7 @@
         </tr>
         {{/each}}
     </table>
-
+    </main>
 </body>
-
+<footer></footer>
 </html>
