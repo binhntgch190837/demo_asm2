@@ -48,21 +48,24 @@
     <h1 class="test">Bin_Shop</h1>
     <script>alert('Welcome to my page!!')</script>
     <img src="img/main.jpg" alt="Cat">
+
     </header>
     <main>
+        <h2><a href='/'>Home</a></h2>
+        <h2><a href="/allproducts">All-Products</a></h2>
     <div style="width: 50%;">
         <form action="/insert" method="post">
-            <div class="mb-3">
-                <label class="form-label" for="txtName"> Product Name</label>
-                <input type="text" class="form-control" name="txtName" id="txtName">
+            <div >
+                <label  for="txtName"> Product Name</label>
+                <input type="text"  name="txtName" id="txtName">
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="txtPrice"> Price</label>
-                <input type="text" class="form-control" name="txtPrice" id="txtPrice">
+            <div >
+                <label  for="txtPrice"> Price</label>
+                <input type="text"  name="txtPrice" id="txtPrice">
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="txtCategory"> Category</label>
-                <select class="form-control" name="txtCategory" id="txtCategory">
+            <div >
+                <label  for="txtCategory"> Category</label>
+                <select  name="txtCategory" id="txtCategory">
                     <option value="Búp Bê">Búp Bê</option>
                     <option value="Lego">Lego</option>
                     <option value="Mô Hình">Mô Hình</option>
@@ -71,18 +74,18 @@
                     <option value="Điều Khiển Từ Xa">Điều Khiển Từ Xa</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="txtURL"> Picture</label>
-                <input type="text" class="form-control" name="txtURL" id="txtURL">
+            <div >
+                <label  for="txtURL"> Picture</label>
+                <input type="text"  name="txtURL" id="txtURL">
                 <span style="color: red;">{{picError}}</span>
             </div>
             <input type="submit" class="btn btn-primary" value="Insert">
         </form>
         <hr>
         <form action="/searchByCategory" method="post">
-            <div class="mb-3">
-                <label class="form-label" for="txtCategory"> Category</label>
-                <select class="form-control" name="txtCategory" id="txtCategory">
+            <div >
+                <label  for="txtCategory"> Category</label>
+                <select  name="txtCategory" id="txtCategory">
                     <option value="all">All</option>
                     <option value="Búp Bê">Búp Bê</option>
                     <option value="Lego">Lego</option>
@@ -96,9 +99,9 @@
         </form>
         <hr>
         <form action="/searchByProductName" method="post">
-            <div class="mb-3">
-                <label class="form-label" for="txtName"> Product Name</label>
-                <input type="text" class="form-control" name="txtName" id="txtName">
+            <div >
+                <label  for="txtName"> Product Name</label>
+                <input type="text"  name="txtName" id="txtName">
             </div>
             <input type="submit" class="btn btn-primary" value="Search by product name">
         </form>

@@ -37,6 +37,11 @@ app.get('/', async (req, res) => {
     var result = await getAll("Products")
     res.render('home', { products: result })
 })
+
+app.get('/allproducts', async (req, res) => {
+    var all = await getAll("Products")
+    res.render('allproducts', { product: all })
+})
 app.get('/delete/:id', async (req, res) => {
     const idValue = req.params.id
     //viet ham xoa object dua tren id
