@@ -19,7 +19,8 @@ app.post('/update', async (req, res) => {
     const name = req.body.txtName
     const category = req.body.txtCategory
     const price = req.body.txtPrice
-    let updateValues = { $set: { name: name, price: price, cat: category } };
+    const url = req.body.txtURL
+    let updateValues = { $set: { name: name, price: price, cat: category, picURL: url } };
 
     await updateDocument(id, updateValues, "Products")
     res.redirect('/')
@@ -41,11 +42,11 @@ app.get('/', async (req, res) => {
 app.get('/allproducts', async (req, res) => {
     var all = await getAll("Products")
     console.log(all)
-    res.render('allproducts', { products: all})
+    res.render('allproducts', { products: all })
 })
 app.get('/allproducts', async (req, res) => {
     var result = await getAll("Products")
-    res.render('allproducts', { product: result})
+    res.render('allproducts', { product: result })
 })
 
 app.get('/delete/:id', async (req, res) => {
@@ -74,7 +75,7 @@ app.post('/insert', async (req, res) => {
 app.post('/searchByCategory', async (req, res) => {
     const category = req.body.txtCategory
     console.log('Category: ', category)
-    if(category == "all") {
+    if (category == "all") {
         var result = await getAll("Products")
         res.render('home', { products: result })
     } else {
@@ -83,16 +84,16 @@ app.post('/searchByCategory', async (req, res) => {
     }
 })
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     var today = new Date();
     var name = "Bin_Shop"
-    res.render('home',{ht:today,name: name,ds:ds})
+    res.render('home', { ht: today, name: name, ds: ds })
 })
 
 app.post('/searchByProductName', async (req, res) => {
     const name = req.body.txtName
     console.log('Product name: ', name)
-    if(name == "") {
+    if (name == "") {
         var result = await getAll("Products")
         res.render('home', { products: result })
     } else {
@@ -104,3 +105,78 @@ app.post('/searchByProductName', async (req, res) => {
 const PORT = process.env.PORT || 5000
 app.listen(PORT)
 console.log('Server is running!')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.post('/insert', async (req, res) => {
+//     const name = req.body.txtName
+//     const category = req.body.txtCategory;
+//     const price = req.body.txtPrice
+//     const url = req.body.txtURL;
+//     console.log(name)
+//     console.log(name.startsWith('aka'))
+//     console.log(url.length)
+//     if (name.startsWith('aka')==false || url.length == 0){
+//         var result = await getAll("Products")
+//         q = {
+//             products: result,
+//             nameErr: '',
+//             picError: ''
+//         }
+//         if(name.startsWith('aka')==false) q.nameErr =  'enter name again!!';
+//         if(url.length == 0) q.picError = 'Phai nhap Picture!';
+//         res.render('home', q);
+//     } else {
+//         //xay dung doi tuong insert
+//         const obj = { name: name, price: price, picURL: url, cat: category }
+//         //goi ham de insert vao DB
+//         await insertToDB(obj,  "Products")
+//         res.redirect('/')
+//     }
+// })
