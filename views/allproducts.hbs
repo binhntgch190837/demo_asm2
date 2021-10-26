@@ -12,20 +12,14 @@
 
 <body>
     <h1 class="test">Bin_Shop</h1>
-    <h2><a href='/'>Home</a></h2>
-    <div>
-        <label for="txtCategory"> Category</label>
-        <select name="txtCategory" id="txtCategory">
-            <option value="all">All</option>
-            <option value="Búp Bê">Búp Bê</option>
-            <option value="Lego">Lego</option>
-            <option value="Mô Hình">Mô Hình</option>
-            <option value="Lắp Ráp">Lắp Ráp</option>
-            <option value="Gấu Bông">Gấu Bông</option>
-            <option value="Điều Khiển Từ Xa">Điều Khiển Từ Xa</option>
-        </select>
-    </div>
-    <input type="submit" class="btn btn-primary" value="Search by category">
+    <h2><a href='/allproducts'>Home</a></h2>
+          <form action="/searchByProductName" method="post">
+            <div >
+                <label  for="txtName"> Product Name</label>
+                <input type="text"  name="txtName" id="txtName">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Search by product name">
+        </form>
     </form>
     <hr>
     </div> -->
