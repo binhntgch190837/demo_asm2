@@ -40,7 +40,8 @@ app.get('/', async (req, res) => {
 
 app.get('/allproducts', async (req, res) => {
     var all = await getAll("Products")
-    res.render('allproducts', { product: all})
+    console.log(all)
+    res.render('allproducts', { products: all})
 })
 app.get('/allproducts', async (req, res) => {
     var result = await getAll("Products")
@@ -80,6 +81,12 @@ app.post('/searchByCategory', async (req, res) => {
         var result = await findProductsByCategory(category)
         res.render('home', { products: result })
     }
+})
+
+app.get('/',(req,res)=>{
+    var today = new Date();
+    var name = "Bin_Shop"
+    res.render('home',{ht:today,name: name,ds:ds})
 })
 
 app.post('/searchByProductName', async (req, res) => {

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Bin_Shop</title>
 </head>
+
 <body>
     <h1 class="test">Bin_Shop</h1>
     <h2><a href='/'>Home</a></h2>
-    <div >
-                <label  for="txtCategory"> Category</label>
-                <select  name="txtCategory" id="txtCategory">
-                    <option value="all">All</option>
-                    <option value="Búp Bê">Búp Bê</option>
-                    <option value="Lego">Lego</option>
-                    <option value="Mô Hình">Mô Hình</option>
-                    <option value="Lắp Ráp">Lắp Ráp</option>
-                    <option value="Gấu Bông">Gấu Bông</option>
-                    <option value="Điều Khiển Từ Xa">Điều Khiển Từ Xa</option>
-                </select>
-            </div>
-            <input type="submit" class="btn btn-primary" value="Search by category">
-        </form>
-        <hr>
-        <table border="1" width="50%">
+    <div>
+        <label for="txtCategory"> Category</label>
+        <select name="txtCategory" id="txtCategory">
+            <option value="all">All</option>
+            <option value="Búp Bê">Búp Bê</option>
+            <option value="Lego">Lego</option>
+            <option value="Mô Hình">Mô Hình</option>
+            <option value="Lắp Ráp">Lắp Ráp</option>
+            <option value="Gấu Bông">Gấu Bông</option>
+            <option value="Điều Khiển Từ Xa">Điều Khiển Từ Xa</option>
+        </select>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Search by category">
+    </form>
+    <hr>
+    </div> -->
+    <hr>
+    <table border="1" width="50%">
         <tr>
             <td>id</td>
             <td>Name</td>
@@ -33,19 +39,17 @@
             <Td>Picture</Td>
             <td>Edit</td>
         </tr>
-        {{#each products}}
+        {{#each this.products}}
         <tr>
-            <td>
-               {{_id}}
-            </td>
+            <td>{{_id}}</td>
             <td>{{name}}</td>
             <td>{{price}}</td>
             <td>{{cat}}</td>
-            <Td><img src="{{picURL}}" width="120" height="100" /></Td>
-            <td>
-            </td>
+            <td><img src="{{picURL}}" width="120" height="100" /></td>
+            <td></td>
         </tr>
         {{/each}}
     </table>
 </body>
+
 </html>
