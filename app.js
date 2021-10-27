@@ -22,9 +22,9 @@ app.post('/update', async (req, res) => {
     const url = req.body.txtURL
     let updateValues = { $set: { name: name, price: price, cat: category, picURL: url } };
 
-    await updateDocument(id, updateValues, "Products")
-    res.redirect('/')
-})
+     await updateDocument(id, updateValues, "Products")
+     res.redirect('/')
+    })
 
 app.get('/edit/:id', async (req, res) => {
     const idValue = req.params.id
